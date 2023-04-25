@@ -50,7 +50,6 @@ def check_all_messages(message):
     answer('The subfields of AI are:\n (1) Machine Learning\n (2) Deep Learning', ['what', 'are', 'subfields', 'of', 'ai'], required_words=['subfields'])
     answer('I will tell you about AI, its applications, its drawbacks and advantages, and the need to\n'
              'adopt AI for increasing the productivity of work.', ['how', 'will', 'you', 'help', 'us'], required_words=['help'])
-    answer()
 
     best_match = max(highest_prob_list, key=highest_prob_list.get)
 
