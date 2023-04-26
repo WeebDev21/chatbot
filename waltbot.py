@@ -35,7 +35,8 @@ def check_all_messages(message):
     answer('Pranaam', ['pranaam'])
     answer('Namaskar', ['namaskar'])
     answer('See you!', ['bye', 'goodbye'])
-    answer('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['how'])
+    answer('AI is not a new term. AI was invented in 1956.', ['is', 'ai', 'something', 'new', 'or', 'old'],required_words=['new', 'old'])
+    answer('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['doing'])
     answer('You\'re welcome!', ['thank', 'thanks'])
     answer('My goal is to spread awareness about Artificial Intelligence and make people educate about new technology.', ['what', 'is', 'your', 'opted', 'goal'], required_words=['goal'])
     answer('My name is Waltbot, but you can call me Walt.',['what', 'is', 'your', 'name'], required_words=['name'])
@@ -57,9 +58,10 @@ def check_all_messages(message):
     answer('Thank You', ['good', 'nice', 'great', 'wow'])
     answer('Well, I am a bot so I do not age.', ['what', 'is', 'your', 'age'], required_words=['age'])
     answer('A data structure is a specialized format for organizing, processing, retrieving and storing data. There are\n several basic and advanced types of data structures, all designed to arrange data to suit a specific purpose.\n Data structures make it easy for users to access and work with the data they need in appropriate ways.',['what', 'is', 'data', 'structures'], required_words=['data', 'structures'])
-    answer('Ethics is a set of moral principles which help us discern between right and wrong. AI ethics is a set of\n guidelines that advise on the design and outcomes of artificial intelligence. AI ethics revolves around four main areas:\n 1.Safety\n 2.Security\n 3.Privacy\n 4.Fairness',['what', 'are', 'ai', 'ethics'], required_words=['ai', 'ethics'])
-    answer('AI Bias means favoring someone or something.\n AI bias focuses on training the machines with unbiased data, when Bias Data is fed to an AI Machine while creating the Model then the machine will also be biased.',['What', 'do', 'you', 'understand', 'my', 'AI', 'Bias'], required_words=['Bias'])
+    answer('Ethics is a set of moral principles which help us discern between right and wrong. AI ethics is a set of\n guidelines that advise on the design and outcomes of artificial intelligence. AI ethics revolves around four main areas:\n 1.Safety\n 2.Security\n 3.Privacy\n 4.Fairness', ['what', 'are', 'ai', 'ethics'], required_words=['ai', 'ethics'])
+    answer('AI Bias means favoring someone or something.\n AI bias focuses on training the machines with unbiased data, when Bias Data is fed to an AI Machine while creating the Model then the machine will also be biased.', ['what', 'do', 'you', 'understand', 'my', 'ai', 'bias'], required_words=['ai', 'bias'])
     answer('Data quality is extremely important when performing data analysis, regardless of whether it is to be used \n for artificial intelligence or not. Many AI techniques are based on having a lot of data which the algorithm \n is trained on to form models allowing it to operate over new data. For these techniques, data is absolutely\n vital, as their performance often has more to do with the quantity and quality of the data than the specific\n algorithm used to do the learning.',['what', 'is', 'importance', 'of', 'data', 'in', 'ai', ], required_words=['importance', 'data'])
+    answer('At the most basic level, a chatbot is a computer program that stimulates and processes human conversation, either spoken or written, \n allowing humans to interact with digital devices as if they were communicating with a real person.', ['what', 'is', 'chatbot'], required_words=['chatbot'])
 
     best_match = max(highest_prob_list, key=highest_prob_list.get)
 
