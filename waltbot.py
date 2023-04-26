@@ -1,7 +1,7 @@
 #pip install nltk
 
 import re
-from responses import unknown
+import random
 
 def probability(user_message, recognised_words, required_words=[]):
     message_certainty = 0
@@ -52,6 +52,8 @@ def check_all_messages(message):
     answer('The subfields of AI are:\n (1) Machine Learning\n (2) Deep Learning', ['what', 'are', 'subfields', 'of', 'ai'], required_words=['subfields'])
     answer('I will tell you about AI, its applications, its drawbacks and advantages, and the need to\n'
              'adopt AI for increasing the productivity of work.', ['how', 'will', 'you', 'help', 'us'], required_words=['help'])
+    answer('NLP is a domain of AI. It is concerned with enabling the communication between humans and computers \n using natural language. Natural language is the language used by humans in their day to day life. \n NLP translates the natural language to binary language that is understandable by computers, and vice versa.', ['what', 'is', 'nlp'], required_words=['nlp'])
+    answer('CV stands for Computer Vision. It is the domain of AI concerned with helping computers to percieve \n the world in the way we humans do. It also enables computers to work with graphical and visual data like images, \n videos, graphs, charts etc.',['what', 'is', 'cv'], required_words=['cv'])
 
     best_match = max(highest_prob_list, key=highest_prob_list.get)
 
@@ -61,6 +63,14 @@ def check_all_messages(message):
 def get_answer(user_input):
     split_message = re.split(r'\s+|[,;?!.-]\s*', user_input.lower())
     response = check_all_messages(split_message)
+    return response
+
+def unknown():
+    response = ["Could you please re-phrase that? ",
+                "...",
+                "Sounds about right.",
+                "What does that mean?"][
+        random.randrange(4)]
     return response
 
 
