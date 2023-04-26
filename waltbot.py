@@ -1,7 +1,9 @@
+#pip install nltk
+
 import re
 from responses import unknown
 
-def probability(user_message, recognised_words, single_response=False, required_words=[]):
+def probability(user_message, recognised_words, required_words=[]):
     message_certainty = 0
     has_required_words = True
 
@@ -16,7 +18,7 @@ def probability(user_message, recognised_words, single_response=False, required_
             has_required_words = False
             break
 
-    if has_required_words or single_response:
+    if has_required_words:
         return int(percentage * 100)
     else:
         return 0
@@ -25,14 +27,14 @@ def probability(user_message, recognised_words, single_response=False, required_
 def check_all_messages(message):
     highest_prob_list = {}
 
-    def answer(bot_response, list_of_words, single_response=False, required_words=[]):
+    def answer(bot_response, list_of_words, required_words=[]):
         nonlocal highest_prob_list
-        highest_prob_list[bot_response] = probability(message, list_of_words, single_response, required_words)
+        highest_prob_list[bot_response] = probability(message, list_of_words, required_words)
 
-    answer('Hello!', ['hello', 'hi', 'hey', 'sup', 'heyo'], single_response=True)
-    answer('See you!', ['bye', 'goodbye'], single_response=True)
+    answer('Hello!', ['hello', 'hi', 'hey', 'sup', 'heyo'])
+    answer('See you!', ['bye', 'goodbye'])
     answer('I\'m doing fine, and you?', ['how', 'are', 'you', 'doing'], required_words=['how'])
-    answer('You\'re welcome!', ['thank', 'thanks'], single_response=True)
+    answer('You\'re welcome!', ['thank', 'thanks'])
     answer('Thank you!', ['i', 'love', 'code', 'palace'], required_words=['code', 'palace'])
     answer('My name is Waltbot, but you can call me Walt.',['what', 'is', 'your', 'name'], required_words=['name'])
 
