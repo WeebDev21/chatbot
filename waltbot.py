@@ -54,6 +54,8 @@ def check_all_messages(message):
              'adopt AI for increasing the productivity of work.', ['how', 'will', 'you', 'help', 'us'], required_words=['help'])
     answer('NLP is a domain of AI. It is concerned with enabling the communication between humans and computers \n using natural language. Natural language is the language used by humans in their day to day life. \n NLP translates the natural language to binary language that is understandable by computers, and vice versa.', ['what', 'is', 'nlp'], required_words=['nlp'])
     answer('CV stands for Computer Vision. It is the domain of AI concerned with helping computers to percieve \n the world in the way we humans do. It also enables computers to work with graphical and visual data like images, \n videos, graphs, charts etc.',['what', 'is', 'cv'], required_words=['cv'])
+    answer('Machine Learning is a subfield of AI. ML helps AI enabled machines and systems to improve themselves overtime \n by considering the past data to make out patterns out of it abd learn something new. Just like we humans learn \n from our past experiences, computers also learn using the data that was fed to them in past.', ['what', 'is', 'machine', 'learning',], required_words=['machine', 'learning'])
+    answer('Deep Learning is an extension of Machine Learning. In DL, the AI system works around large datasets and extract \n information out of it. DL helps the AI systems to work around large datasets like large number of images, videos etc.', ['what', 'is', 'deep', 'learning'], required_words=['deep', 'learning'])
 
     best_match = max(highest_prob_list, key=highest_prob_list.get)
 
@@ -67,7 +69,6 @@ def get_answer(user_input):
 
 def unknown():
     response = ["Could you please re-phrase that? ",
-                "...",
                 "Sounds about right.",
                 "What does that mean?"][
         random.randrange(4)]
