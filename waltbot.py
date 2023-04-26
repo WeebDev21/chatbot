@@ -37,7 +37,6 @@ def check_all_messages(message):
     answer('You\'re welcome!', ['thank', 'thanks'])
     answer('Thank you!', ['i', 'love', 'code', 'palace'], required_words=['code', 'palace'])
     answer('My name is Waltbot, but you can call me Walt.',['what', 'is', 'your', 'name'], required_words=['name'])
-
     answer("It depends upon how you use it. AI has been a boon to mankind as it has\n "
              "helped humans in a lot of fields like healthcare, technology, education and many other fields.", ['is', 'ai', 'boon', 'or', 'curse'], required_words=['boon', 'curse'])
     answer("Ai has helped humans a lot in several fields, but it has also been a problem to them.\n "
@@ -52,10 +51,11 @@ def check_all_messages(message):
     answer('The subfields of AI are:\n (1) Machine Learning\n (2) Deep Learning', ['what', 'are', 'subfields', 'of', 'ai'], required_words=['subfields'])
     answer('I will tell you about AI, its applications, its drawbacks and advantages, and the need to\n'
              'adopt AI for increasing the productivity of work.', ['how', 'will', 'you', 'help', 'us'], required_words=['help'])
-    answer('NLP is a domain of AI. It is concerned with enabling the communication between humans and computers \n using natural language. Natural language is the language used by humans in their day to day life. \n NLP translates the natural language to binary language that is understandable by computers, and vice versa.', ['what', 'is', 'nlp'], required_words=['nlp'])
     answer('CV stands for Computer Vision. It is the domain of AI concerned with helping computers to percieve \n the world in the way we humans do. It also enables computers to work with graphical and visual data like images, \n videos, graphs, charts etc.',['what', 'is', 'cv'], required_words=['cv'])
-    answer('Machine Learning is a subfield of AI. ML helps AI enabled machines and systems to improve themselves overtime \n by considering the past data to make out patterns out of it abd learn something new. Just like we humans learn \n from our past experiences, computers also learn using the data that was fed to them in past.', ['what', 'is', 'machine', 'learning',], required_words=['machine', 'learning'])
-    answer('Deep Learning is an extension of Machine Learning. In DL, the AI system works around large datasets and extract \n information out of it. DL helps the AI systems to work around large datasets like large number of images, videos etc.', ['what', 'is', 'deep', 'learning'], required_words=['deep', 'learning'])
+    answer('NLP is a domain of AI. It is concerned with enabling the communication between humans and computers \n using natural language. Natural language is the language used by humans in their day to day life. \n NLP translates the natural language to binary language that is understandable by computers, and vice versa.',['what', 'is', 'nlp'], required_words=['nlp'])
+    answer('Deep Learning is an extension of Machine Learning. In DL, the AI system works around large datasets and extract \n information out of it. DL helps the AI systems to work around large datasets like large number of images, videos etc.',['what', 'is', 'dl'], required_words=['dl'])
+    answer('Machine Learning is a subfield of AI. ML helps AI enabled machines and systems to improve themselves overtime \n by considering the past data to make out patterns out of it abd learn something new. Just like we humans learn \n from our past experiences, computers also learn using the data that was fed to them in past.',['what', 'is', 'ml'], required_words=['ml'])
+    answer('Data Science is the most basic domain of AI. Data Science helps the AI systems to analyze data that is fed to it. \n It analyzes the data and makes trend out of it. This can be understood like, as we learn various things from \n various sources, machines and AI systems learn from the data using data science.', ['what', 'is', 'data', 'science'], required_words=['data', 'science'])
 
     best_match = max(highest_prob_list, key=highest_prob_list.get)
 
@@ -68,11 +68,9 @@ def get_answer(user_input):
     return response
 
 def unknown():
-    response = ["Could you please re-phrase that? ",
-                "Sounds about right.",
-                "What does that mean?"][
-        random.randrange(4)]
-    return response
+    answer = ["Could you please re-phrase that? "][
+        random.randrange(1)]
+    return answer
 
 
 while True:
